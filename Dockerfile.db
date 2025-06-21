@@ -1,0 +1,5 @@
+FROM postgres
+RUN apt-get update -qq && apt-get install -y vim
+
+WORKDIR /scripts
+ADD ./scripts/* .
