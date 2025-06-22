@@ -9,8 +9,20 @@ default: &default
   host: db
 
 development:
-  <<: *default
-  database: template_development
+  primary:
+    <<: *default
+    database: template_development
+    host: db
+  secondary:
+    <<: *default
+    database: template_development
+    host: db_replica_1
+    replica: true
+  tertiary:
+    <<: *default
+    database: template_development
+    host: db_replica_2
+    replica: true
 
 test:
   <<: *default

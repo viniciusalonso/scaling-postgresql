@@ -11,6 +11,20 @@ services:
       - db-data:/var/lib/postgresql/data
       - gem-data:/usr/local/bundle
 
+  db_replica_1:
+    build:
+      context: .
+      dockerfile: Dockerfile.db
+    environment:
+      POSTGRES_PASSWORD: rapadura
+
+  db_replica_2:
+    build:
+      context: .
+      dockerfile: Dockerfile.db
+    environment:
+      POSTGRES_PASSWORD: rapadura
+
   pghero:
     image: ankane/pghero
     ports:
