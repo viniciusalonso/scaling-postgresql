@@ -17,6 +17,8 @@ services:
       dockerfile: Dockerfile.db
     environment:
       POSTGRES_PASSWORD: rapadura
+    volumes:
+      - db-replica-1-data:/var/lib/postgresql/data
 
   db_replica_2:
     build:
@@ -24,6 +26,9 @@ services:
       dockerfile: Dockerfile.db
     environment:
       POSTGRES_PASSWORD: rapadura
+    volumes:
+      - db-replica-2-data:/var/lib/postgresql/data
+
 
   pghero:
     image: ankane/pghero
@@ -60,6 +65,10 @@ services:
 
 volumes:
   db-data:
+    driver: local
+  db-replica-1-data:
+    driver: local
+  db-replica-2-data:
     driver: local
   gem-data:
     driver: local
