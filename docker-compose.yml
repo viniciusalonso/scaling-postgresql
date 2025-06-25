@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: rapadura
     volumes:
       - db-data:/var/lib/postgresql/data
-      - gem-data:/usr/local/bundle
+      - ./scripts/.:/scripts
 
   db_replica_1:
     build:
