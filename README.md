@@ -1,24 +1,21 @@
-# README
+# Scaling PostgreSQL
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project contains some examples used in the talk "Escalando o PostgreSQL". You can find the slides [here PT-BR](https://speakerdeck.com/viniciusalonso/escalando-postgresql).
 
-Things you may want to cover:
+The directory scripts has the commands used to reproduce the performance tests:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```txt
+scripts
+├── materialized_view.sql
+├── pg_stat_statements.txt
+└── pgbench
+    ├── template_development
+    │   ├── fill_tables.sh
+    │   ├── insert.sql
+    │   ├── load_test.sh
+    │   └── select.sql
+    └── test
+        ├── create_database.sh
+        ├── create_db.sql
+        └── load_test.sh
+```
