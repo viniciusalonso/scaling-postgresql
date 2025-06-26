@@ -4,4 +4,4 @@
 # -f insert.sql: usa o script customizado.
 # -t 100: executa 100 transações por conexão.
 
-pgbench -U postgres -n -f insert.sql -t 100 template_development
+pgbench -U postgres -n -f pgbench/template_development/insert.sql -t 10000 template_development

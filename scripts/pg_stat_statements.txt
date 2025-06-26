@@ -1,0 +1,12 @@
+# Adicionar essas linhas no arquivo postgresql.conf
+# para habilitar o pg_stat_statements
+
+shared_preload_libraries = 'pg_stat_statements'
+pg_stat_statements.track = all
+
+select (total_exec_time / 1000 / 60)  as total_min,
+mean_exec_time as avg_ms,
+calls,
+query
+FROM pg_stat_statements
+ORDER BY 1 DESC
